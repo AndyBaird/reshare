@@ -1,6 +1,8 @@
 <nav class="main-nav">
   <a class="main-nav-link <%- m.page === 'shares' ? 'active' : '' %>" href="#/shares">Shares</a>
   <a class="main-nav-link <%- m.page === 'users' ? 'active' : '' %>" href="#/users">Users</a>
+  <a class="main-nav-link <%- m.page === 'new-user' ? 'active' : '' %>" href="#/users">New User</a>
   <a class="main-nav-link" href="/auth/github">Login</a>
-  <span><%- m.currentUser.userId %></span>
+  <a class="main-nav-link" href="/logout">Logout</a>
+  <span class = "currentUser"><%- m.currentUser.userId %></span>
 </nav>

@@ -4,3 +4,10 @@
 @import 'defaults';
 @import 'common-layout';
 @import 'forms';
+
+.currentUser{
+  position: absolute;
+  top:0;
+  right: 0;
+  padding: 1em 1em;
+}

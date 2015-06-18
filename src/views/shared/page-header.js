@@ -22,5 +22,5 @@ module.exports = Backbone.View.extend({
       page: this.model.nav.get('page'),
       currentUser: this.model.currentUser.toJSON()
     }));
-  }
+  },
 });
