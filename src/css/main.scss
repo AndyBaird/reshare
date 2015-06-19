@@ -11,3 +11,30 @@
   right: 0;
   padding: 1em 1em;
 }
+.all-shares{
+  width: 100%;
+  padding: 2em;
+  border: solid 1px $blue;
+}
+.link-row {
+  display: block;
+}
+.meta-row {
+  display: block;
+  font-size: 12px;
+  border-bottom: solid 1px $blue;
+}
+.submit-wrapper {
+  margin:1em;
+}
+.submit-input {
+  width:100%;
+}
+.btn {
+  margin:0 auto;
+  display: block;
+}
+.btn:hover {
+  background: $blue;
+  color:white;
+}
