@@ -12,11 +12,17 @@ module.exports = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model, 'change', this.render);
     this.render();
+      
+      this.model.fetch().done(this.render.bind(this)).fail(function () {
+      alert('Failed to load!');
+      console.error(arguments);
+    });
   },
 
   render: function () {
+        console.log(this.model.toJSON());
     this.$el.html(this.template({ 
-      user: this.model.toJSON()
+      share: this.model.toJSON()
     }));
   }
 });

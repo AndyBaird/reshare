@@ -13,16 +13,17 @@
 }
 .all-shares{
   width: 100%;
-  padding: 2em;
-  border: solid 1px $blue;
+  list-style-position: inside;
+
 }
 .link-row {
-  display: block;
+    list-style-type: decimal;
 }
 .meta-row {
   display: block;
   font-size: 12px;
-  border-bottom: solid 1px $blue;
+  border-bottom: solid 1px $black;
+  margin-bottom: 1em;
 }
 .submit-wrapper {
   margin:1em;

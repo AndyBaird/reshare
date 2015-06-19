@@ -6,6 +6,7 @@ var _ = require('underscore');
 var template = require('../template');
 var handleError = require('../../util/handle-error');
 var formToObj = require('form-to-obj');
+var router = require('../../util/router');
 
 module.exports = Backbone.View.extend({
   template: template('shares/new-share'),
@@ -13,7 +14,7 @@ module.exports = Backbone.View.extend({
   className: 'submit-container',
   
   events: {
-  'submit new-share-form': 'submitShare'
+  'submit .new-share-form': 'submitShare'
   },
   
   initialize: function () {
@@ -34,6 +35,8 @@ module.exports = Backbone.View.extend({
     var newShare = formToObj(e.target);
     
     this.model.create(newShare, handleError());
+    console.log(this.model.create(newShare));
+    router.navigate('shares', {trigger: true});
   }
 });
 
