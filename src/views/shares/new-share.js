@@ -2,7 +2,9 @@
 
 var Backbone = require('backbone');
 var $ = require('jquery');
+var _ = require('underscore');
 var template = require('../template');
+var handleError = require('../../util/handle-error');
 var formToObj = require('form-to-obj');
 
 module.exports = Backbone.View.extend({
@@ -11,13 +13,16 @@ module.exports = Backbone.View.extend({
   className: 'submit-container',
   
   events: {
-  'click .btn-submit': 'submitShare'
+  'submit new-share-form': 'submitShare'
   },
-
   
   initialize: function () {
     this.listenTo(this.model, 'change', this.render);
-    this.render();
+      this.model.fetch().done(this.render.bind(this)).fail(function () {
+      alert('Failed to load!');
+      console.error(arguments);
+    });
+    
   },
 
   render: function () {
@@ -25,10 +30,10 @@ module.exports = Backbone.View.extend({
   },
   
   submitShare: function (e) {
-    e.preventDefault();
-    var submit = formToObj(e.target);
+   e.preventDefault();
+    var newShare = formToObj(e.target);
     
-    this.model.create(submit);
+    this.model.create(newShare, handleError());
   }
 });
 
