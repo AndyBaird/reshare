@@ -3,7 +3,19 @@
    <a class="main-nav-link <%- m.page === 'submit' ? 'active' : '' %>" href="#/shares/new">Submit</a>
   <a class="main-nav-link <%- m.page === 'users' ? 'active' : '' %>" href="#/users">Users</a>
   <a class="main-nav-link <%- m.page === 'new-user' ? 'active' : '' %>" href="#/users">New User</a>
-  <a class="main-nav-link" href="/auth/github">Login</a>
-  <a class="main-nav-link" href="/logout">Logout</a>
+
+  
+  <script type='text/javascript'>
+   var currentUser = document.querySelector('.currentUser').innerText; 
+     if (currentUser.length === 0){
+     document.querySelector('.logout-btn').style.display = "none"
+     }
+     if (currentUser.length > 0){
+     document.querySelector('.login-btn').style.display = "none"
+     }; 
+  </script>
+  
+  <a class="main-nav-link login-btn" href="/auth/github">Login</a>
+  <a class="main-nav-link logout-btn" href="/logout">Logout</a>
   <span class = "currentUser"><%- m.currentUser.userId %></span>
 </nav>
