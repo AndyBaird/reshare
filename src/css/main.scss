@@ -4,17 +4,18 @@
 @import 'defaults';
 @import 'common-layout';
 @import 'forms';
-
 .currentUser{
   position: absolute;
+  right:0;
   top:0;
-  right: 0;
-  padding: 1em 1em;
+}
+
+.currentUser:hover{
+  background-color: $purple;
 }
 .all-shares{
   width: 100%;
   list-style-position: inside;
-
 }
 .link-row {
     list-style-type: decimal;
@@ -38,4 +39,54 @@
 .btn-submit:hover {
   background: $blue;
   color:white;
+}
+
+li {
+  display: inline-block;
+}
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #fff;
+	background: $purple;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+@media screen and (max-width : 590px){
+  li {
+    display: block;
+  }
+  .currentUser {
+    display: none;
+  }
+  ul {
+		position: static;
+		 display: none;
+	}
+	/*Create vertical spacing*/
+	li {
+		margin-bottom: 1px;
+	}
+	/*Make all menu links full width*/
+	ul li, li a {
+    font-size: 14px;
+    text-align: center;
+	}
+  /*Display 'show menu' link*/
+	.show-menu {
+		display:block;
+	}
+  
 }

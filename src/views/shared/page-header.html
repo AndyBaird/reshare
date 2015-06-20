@@ -1,21 +1,37 @@
-<nav class="main-nav">
-  <a class="main-nav-link <%- m.page === 'shares' ? 'active' : '' %>" href="#/shares">Shares</a>
-   <a class="main-nav-link <%- m.page === 'submit' ? 'active' : '' %>" href="#/shares/new">Submit</a>
-  <a class="main-nav-link <%- m.page === 'users' ? 'active' : '' %>" href="#/users">Users</a>
-  <a class="main-nav-link <%- m.page === 'new-user' ? 'active' : '' %>" href="#/users">New User</a>
+<label for="show-menu" class="show-menu">Show Menu</label>
+<input type="checkbox" id="show-menu" role="button">
 
-  
-  <script type='text/javascript'>
-   var currentUser = document.querySelector('.currentUser').innerText; 
-     if (currentUser.length === 0){
-     document.querySelector('.logout-btn').style.display = "none"
-     }
-     if (currentUser.length > 0){
-     document.querySelector('.login-btn').style.display = "none"
-     }; 
-  </script>
-  
-  <a class="main-nav-link login-btn" href="/auth/github">Login</a>
-  <a class="main-nav-link logout-btn" href="/logout">Logout</a>
-  <span class = "currentUser"><%- m.currentUser.userId %></span>
-</nav>
+<ul id="menu">
+  <nav class="main-nav">
+    <li>
+      <a class="main-nav-link <%- m.page === 'shares' ? 'active' : '' %>" href="#/shares">Shares</a>
+    </li>
+     <li>
+       <a class="main-nav-link <%- m.page === 'submit' ? 'active' : '' %>" href="#/shares/new">Submit</a>
+     </li>
+    <li>
+      <a class="main-nav-link <%- m.page === 'users' ? 'active' : '' %>" href="#/users">Users</a>
+      </li>
+    <li>
+      <a class="main-nav-link <%- m.page === 'new-user' ? 'active' : '' %>" href="#/users">New User</a>
+      </li> 
+    <li>
+      <a class="main-nav-link login-btn" href="/auth/github">Login</a>
+      </li>
+    <li>
+    <a class="main-nav-link logout-btn" href="/logout">Logout</a>
+    </li>
+    <li>
+    <span class = "currentUser main-nav-link"><%- m.currentUser.userId %></span>
+      </li>
+      <script type='text/javascript'>
+       var currentUser = document.querySelector('.currentUser').innerText; 
+         if (currentUser.length === 0){
+         document.querySelector('.logout-btn').style.display = "none"
+         }
+         if (currentUser.length > 0){
+         document.querySelector('.login-btn').style.display = "none"
+         }; 
+      </script>
+  </nav>
+</ul>
