@@ -1,10 +1,13 @@
 <ol class="all-shares">
   <% _.chain(m.share).forEach(function(share) { %>
   <li class = "link-row">
-     <span><%- share.url %></span>
+     <span><%- share.description %></span>
+     <span class = "share-url">(<%- share.url %>)</span>
      </li>
   <li class = "meta-row">
-    <span><%- share.description %></span>
+    &#8673
+    <span><%- share.upvotes %> points by <%- share.userId %></span>
+
     </li>
   <% }) %>
 </ol>

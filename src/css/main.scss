@@ -9,7 +9,6 @@
   right:0;
   top:0;
 }
-
 .currentUser:hover{
   background-color: $purple;
 }
@@ -26,6 +25,9 @@
   border-bottom: solid 1px $black;
   margin-bottom: 1em;
 }
+.share-url{
+  font-size: 0.8em;
+}
 .submit-wrapper {
   margin:1em;
 }
@@ -41,7 +43,7 @@
   color:white;
 }
 
-li {
+.main-nav-li-wrapper {
   display: inline-block;
 }
 /*Style 'show menu' label button and hide it by default*/
@@ -64,8 +66,10 @@ input[type=checkbox]{
 input[type=checkbox]:checked ~ #menu{
     display: block;
 }
+
+
 @media screen and (max-width : 590px){
-  li {
+  .main-nav-li-wrapper {
     display: block;
   }
   .currentUser {
@@ -88,5 +92,15 @@ input[type=checkbox]:checked ~ #menu{
 	.show-menu {
 		display:block;
 	}
+  .main-nav {
+    padding: 0em;
+  }
+  .main-nav-link{
+    padding:0.5em;
+  }
+  .main-nav-link:hover {
+    background-color: $green;
+    
+  }
   
 }

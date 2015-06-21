@@ -3,25 +3,25 @@
 
 <ul id="menu">
   <nav class="main-nav">
-    <li>
+    <li class = "main-nav-li-wrapper">
       <a class="main-nav-link <%- m.page === 'shares' ? 'active' : '' %>" href="#/shares">Shares</a>
     </li>
-     <li>
+     <li class = "main-nav-li-wrapper">
        <a class="main-nav-link <%- m.page === 'submit' ? 'active' : '' %>" href="#/shares/new">Submit</a>
      </li>
-    <li>
+    <li class = "main-nav-li-wrapper">
       <a class="main-nav-link <%- m.page === 'users' ? 'active' : '' %>" href="#/users">Users</a>
       </li>
-    <li>
+    <li class = "main-nav-li-wrapper">
       <a class="main-nav-link <%- m.page === 'new-user' ? 'active' : '' %>" href="#/users">New User</a>
       </li> 
-    <li>
+    <li class = "main-nav-li-wrapper">
       <a class="main-nav-link login-btn" href="/auth/github">Login</a>
       </li>
-    <li>
+    <li class = "main-nav-li-wrapper">
     <a class="main-nav-link logout-btn" href="/logout">Logout</a>
     </li>
-    <li>
+    <li class = "main-nav-li-wrapper">
     <span class = "currentUser main-nav-link"><%- m.currentUser.userId %></span>
       </li>
       <script type='text/javascript'>
